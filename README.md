@@ -1,15 +1,16 @@
-#uc
-is a [Firefox](http://firefox.com) extension that allows you to run arbitrary local scripts in chrome windows.
-In short, [userChromeJS](http://userchromejs.mozdev.org/) + [subscriptoverlayloader.js](http://stashbox.org/26086/subscriptoverlayloader.js).
+#uccn
+首先要说明的是，本作品是从 [uc](https://github.com/satyr/uc)派生出来，主要是做了汉化处理而已。
+uc 是可以让您在 chrome 窗口中运行任意本地脚本的 [Firefox](http://firefox.com) 扩展。
+简单地说就是 [userChromeJS](http://userchromejs.mozdev.org/) + [subscriptoverlayloader.js](http://stashbox.org/26086/subscriptoverlayloader.js)。
 
-###usage
-Choose script paths and depths in options (Tools -> uc) to autoload according to their meta data block.
+###用法
+在选项中(工具 -> uc)选择脚本“路径”和“深度”，以便根据它们的 meta 数据块自动加载。
 
-* If directory, all *\*.uc.{js,xul,css}* files below it up to specified depth are loaded.
-* If depth is 0, the path is ignored.
-* The default setting has a single
+* 如果是目录的话，其下的直至指定深度的所有 *\*.uc.{js,xul,css}* 文件都会被加载。
+* 如果深度为 0，路径将会被忽略。
+* 默认设置是一个单一的
   _<[UChrm](https://developer.mozilla.org/index.php?title=en/File_I%2F%2FO)>_
-  meaning that it loads the *chrome* directory in your current profile
+  这表示它加载meaning that it loads the *chrome* directory in your current profile
   as does subscriptoverlayloader. Note that *userChrome.js* isn't loaded.
 
 ###supported metadata
