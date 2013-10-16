@@ -3,18 +3,18 @@
  id="uc" title="uc" width="400" height="200"
  persist="width,height,screenX,screenY"
  buttons="extra2,accept,cancel"
- buttonlabelextra2="Remove" buttonaccesskeyextra2="R" ondialogextra2="remove()"
+ buttonlabelextra2="删除(R)" buttonaccesskeyextra2="R" ondialogextra2="remove()"
  ondialogaccept="save()"
  ><script src="uco.js" type="application/javascript;version=1.8"/>
  <tree id="paths" flex="1" editable="true" seltype="single"
   hidecolumnpicker="true" onkeydown="keydown(event)">
   <treecols style="font-family:monospace">
-   <treecol id="path" label="*.uc.{js,xul,css}  */" tooltiptext="Path"
+   <treecol id="path" label="*.uc.{js,xul,css}  */" tooltiptext="路径"
     flex="1" crop="center"
     editable="true" sortActive="true" sortDirection="ascending"
     persist="width,sortDirection,sortActive"/>
    <splitter class="tree-splitter"/>
-   <treecol id="depth" label="&#x21A7;" tooltiptext="Depth"
+   <treecol id="depth" label="&#x21A7;" tooltiptext="深度"
     editable="true" sortActive="true"
     persist="width,sortDirection,sortActive"/>
   </treecols>
@@ -35,33 +35,33 @@
    / <h:b>D</h:b>own
    / <h:b>0</h:b> to <h:b>9</h:b>
   </description>
-  <button label="+Files" accesskey="F"
+  <button label="+文件(F)" accesskey="F"
    oncommand="pick('OpenMultiple')"/>
-  <button label="+Directory" accesskey="D"
+  <button label="+目录(D)" accesskey="D"
    oncommand="pick('GetFolder')"/>
  </hbox>
  <popupset id="mainPopupSet">
   <menupopup id="copy-paste">
    <menuitem id="copy" oncommand="copy()"
-    label="Copy" accesskey="C"/>
+    label="复制(C)" accesskey="C"/>
    <menuitem id="paste" oncommand="paste()"
-    label="Paste" accesskey="P"/>
+    label="粘贴(P)" accesskey="P"/>
    <menuitem id="copy-all" oncommand="copy(1)"
-    label="Copy Paths" accesskey="o"/>
+    label="复制路径(O)" accesskey="o"/>
    <menuitem id="paste-all" oncommand="paste(1)"
-    label="Paste Paths" accesskey="a"/>
+    label="粘贴路径(A)" accesskey="a"/>
   </menupopup>
  </popupset>
  <keyset id="mainKeySet">
   <key id="key-copy" label="copy"
    modifiers="accel" key="c" oncommand="copy()"/>
-  <key id="key-copy-all" label="copy paths"
+  <key id="key-copy-all" label="复制路径"
    modifiers="accel,shift" key="c" oncommand="copy(1)"/>
-  <key id="key-paste" label="paste"
+  <key id="key-paste" label="粘贴"
    modifiers="accel" key="v" oncommand="paste()"/>
-  <key id="key-paste-all" label="paste all"
+  <key id="key-paste-all" label="粘贴全部"
    modifiers="accel,shift" key="v" oncommand="paste(1)"/>
-  <key id="key-close" label="close"
+  <key id="key-close" label="关闭"
    modifiers="accel" key="w" oncommand="close()"/>
  </keyset>
 </dialog>
