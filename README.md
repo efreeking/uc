@@ -10,40 +10,39 @@ uc 是可以让您在 chrome 窗口中运行任意本地脚本的 [Firefox](http
 * 如果深度为 0，路径将会被忽略。
 * 默认设置是一个单一的
   _<[UChrm](https://developer.mozilla.org/index.php?title=en/File_I%2F%2FO)>_
-  这表示它加载meaning that it loads the *chrome* directory in your current profile
-  as does subscriptoverlayloader. Note that *userChrome.js* isn't loaded.
+  这表示它如 subscriptoverlayloader 一样加载您的当前 Profile 中的 *chrome* 目录。注意 *userChrome.js* 不会被加载。
 
-###supported metadata
-The syntax is roughly identical to [Greasemonkey's](http://wiki.greasespot.net/Metadata_Block).
+###支持的 metadata
+语法和 [Greasemonkey 的](http://wiki.greasespot.net/Metadata_Block)大致相同。
 
 * __@name__
-  The script name.
+  脚本名称。
 
 * __@include__ / __@exclude__
-  The URL onto which this script is/isn't loaded.
-  * `*` are wildcards.
-  * If prefixed with `~`, the rest is treated as regular expression pattern.
-    ([example](http://gist.github.com/57590))
+  这个脚本将会指定的 URL 上加载/不加载。
+  * `*` 是通配符。
+  * 如果前缀 `~`，剩余的将会视为正则表达式式样。
+    ([例子](http://gist.github.com/57590))
 
 * __@require__
-  Accepts a script URL and loads it beforehand.
-  * The URL can be absolute or relative, but must be local.
-  * Will not load the same script twice for a window.
+  接受一个脚本 URL 并预先加载它.
+  * URL 可以是绝对或相对的,但必须是本地的.
+  * 对于一个窗口同一个脚本将不会被加载两次.
 
 * __@delay__
-  The delay before overlay in milliseconds. XUL only.
+  在 overlay (覆盖)前的延时,单位为毫秒.仅 XUL.
 
 * @(whatever)
-  All other meta data are stored simply as text data.
-  `UC` object defined in each window keeps them.
+  所有其它被简单的存储为文本数据的 meta 数据。
+  `UC` 对象在每个保留它们的窗口中定义。
 
-###improvements from userChromeJS + subscriptoverlayloader.js
-* Lets you specify files/directories to load.
-* Targets subwindows as well, such as about:config or the sidebar UIs.
-* Reads meta data only when necessary--on startup or on script update.
-* Regex in @include/@exclude.
+###来自 userChromeJS + subscriptoverlayloader.js 的改进
+* 让您指定要加载的文件/目录。
+* 目标子窗口也可以，譬如 about:config 或侧栏 UIs。
+* 仅当需要的时候读取 meta 数据--在启动或脚本更新时。
+* 在 @include/@exclude 中使用正则表达式
 * @require
 
-###drawbacks
-* Runs on Firefox 3.5+ only.
-* Scamps workaround for <http://bugzil.la/330458>.
+###缺点
+* 仅可在 Firefox 3.5+ 上运行。
+* 对 <http://bugzil.la/330458> 的流氓解决方法。
